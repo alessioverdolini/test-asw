@@ -1,5 +1,6 @@
 package asw.instagnam.ricette.domain;
 
+import asw.instagnam.ricette.producer.RicetteEventProducer;
 import org.springframework.stereotype.Service;
 import asw.instagnam.common.api.event.DomainEvent;
 import asw.instagnam.ricetteservice.api.event.RicettaCreatedEvent;
@@ -10,33 +11,33 @@ import java.util.*;
 @Service
 public class RicetteService {
 
-	@Autowired
-	private RicetteRepository ricetteRepository;
-	
-	@Autowired
-	private RicetteDomainEventPublisher domainEventPublisher;
+	private final RicetteRepository ricetteRepository;
+	private final RicetteEventProducer domainEventProducer;
 
- 	public RicettaCompleta createRicetta(String autore, String titolo, String preparazione) {
+	@Autowired
+	public RicetteService(RicetteRepository ricetteRepository, RicetteEventProducer domainEventProducer) {
+		this.ricetteRepository = ricetteRepository;
+		this.domainEventProducer = domainEventProducer;
+	}
+
+	public RicettaCompleta createRicetta(String autore, String titolo, String preparazione) {
 		RicettaCompleta ricetta = new RicettaCompleta(autore, titolo, preparazione); 
 		ricetta = ricetteRepository.save(ricetta);
 		DomainEvent event = new RicettaCreatedEvent(ricetta.getId(),ricetta.getAutore(),ricetta.getTitolo()); 
-		domainEventPublisher.publish(event);
+		domainEventProducer.produce(event);
 		return ricetta;
 	}
 
  	public RicettaCompleta getRicetta(Long id) {
-		RicettaCompleta ricetta = ricetteRepository.findById(id).orElse(null);
-		return ricetta;
+		return ricetteRepository.findById(id).orElse(null);
 	}
 
 	public Collection<RicettaCompleta> getRicette() {
-		Collection<RicettaCompleta> ricette = ricetteRepository.findAll();
-		return ricette;
+		return ricetteRepository.findAll();
 	}
 
 	public Collection<RicettaCompleta> getRicetteByAutore(String autore) {
-		Collection<RicettaCompleta> ricette = ricetteRepository.findAllByAutore(autore);
-		return ricette;
+		return ricetteRepository.findAllByAutore(autore);
 	}
 
 }

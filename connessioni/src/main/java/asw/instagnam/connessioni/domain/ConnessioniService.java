@@ -1,5 +1,6 @@
 package asw.instagnam.connessioni.domain;
 
+import asw.instagnam.common.api.event.DomainEventProducer;
 import org.springframework.stereotype.Service;
 import asw.instagnam.common.api.event.DomainEvent;
 import asw.instagnam.connessioniservice.api.event.ConnessioneCreatedEvent;
@@ -11,18 +12,21 @@ import java.util.*;
 @Service
 public class ConnessioniService {
 
+	private final ConnessioniRepository connessioniRepository;
+	private final DomainEventProducer domainEventProducer;
+
 	@Autowired
-	private ConnessioniRepository connessioniRepository;
-	
-	@Autowired
-	private ConnessioniDomainEventPublisher domainEventPublisher;
+	public ConnessioniService(ConnessioniRepository connessioniRepository, DomainEventProducer domainEventProducer) {
+		this.connessioniRepository = connessioniRepository;
+		this.domainEventProducer = domainEventProducer;
+	}
 
 
- 	public Connessione createConnessione(String follower, String followed) {
+	public Connessione createConnessione(String follower, String followed) {
 		Connessione connessione = new Connessione(follower, followed); 
 		connessione = connessioniRepository.save(connessione);
 		DomainEvent event = new ConnessioneCreatedEvent(connessione.getId(), connessione.getFollower(), connessione.getFollowed()); 
-		domainEventPublisher.publish(event);
+		domainEventProducer.produce(event);
 		return connessione;
 	}
 

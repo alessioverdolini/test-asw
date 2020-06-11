@@ -1,20 +1,18 @@
 package asw.instagnam.connessioni.producer;
 
+import asw.instagnam.common.api.event.DomainEvent;
+import asw.instagnam.common.api.event.DomainEventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.connessioni.domain.DomainEventProducer;
-import asw.instagnam.connessioniservice.api.event.ConnessioniServiceEventChannel;
-
 @Component
-public class EventProducer implements DomainEventProducer {
+public class ConnessioniEventProducer implements DomainEventProducer {
 
 	private final KafkaTemplate<String, DomainEvent> template;
 
 	@Autowired
-	public EventProducer(KafkaTemplate<String, DomainEvent> template) {
+	public ConnessioniEventProducer(KafkaTemplate<String, DomainEvent> template) {
 		this.template = template;
 	}
 
@@ -25,7 +23,7 @@ public class EventProducer implements DomainEventProducer {
 
 	@Override
 	public String getTopic() {
-		return null;
+		return "connessioni-service-event-channel";
 	}
 
 }

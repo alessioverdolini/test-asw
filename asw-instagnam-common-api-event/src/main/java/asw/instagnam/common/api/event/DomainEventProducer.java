@@ -1,4 +1,4 @@
-package asw.instagnam.connessioni.domain;
+package asw.instagnam.common.api.event;
 
 import asw.instagnam.common.api.event.DomainEvent;
 

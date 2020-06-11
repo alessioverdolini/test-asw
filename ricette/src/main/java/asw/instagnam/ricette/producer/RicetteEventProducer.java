@@ -1,4 +1,4 @@
-package asw.instagnam.connessioni.producer;
+package asw.instagnam.ricette.producer;
 
 import asw.instagnam.common.api.event.DomainEvent;
 import asw.instagnam.common.api.event.DomainEventProducer;
@@ -7,12 +7,12 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConnessioniEventProducer implements DomainEventProducer {
+public class RicetteEventProducer implements DomainEventProducer {
 
 	private final KafkaTemplate<String, DomainEvent> template;
 
 	@Autowired
-	public ConnessioniEventProducer(KafkaTemplate<String, DomainEvent> template) {
+	public RicetteEventProducer(KafkaTemplate<String, DomainEvent> template) {
 		this.template = template;
 	}
 
@@ -23,7 +23,7 @@ public class ConnessioniEventProducer implements DomainEventProducer {
 
 	@Override
 	public String getTopic() {
-		return "connessioni-service-event-channel";
+		return "ricette-service-event-channel";
 	}
 
 }
