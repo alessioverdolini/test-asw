@@ -1,8 +1,8 @@
 package asw.instagnam.ricetteseguite.consumer;
 
-import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.common.api.event.RicettaCreatedEvent;
-import asw.instagnam.common.api.event.RicetteServiceEventChannel;
+import asw.instagnam.common.api.event.events.DomainEvent;
+import asw.instagnam.common.api.event.events.RicettaCreatedEvent;
+import asw.instagnam.common.api.event.Topic;
 import asw.instagnam.ricetteseguite.domain.RicetteSeguiteService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class RicetteDomainEventConsumer implements DomainEventConsumer {
 		this.service = ricetteSeguiteService;
 	}
 
-	@KafkaListener(topics = RicetteServiceEventChannel.channel)
+	@KafkaListener(topics = Topic.ricette)
 	public void onEvent(ConsumerRecord<String, DomainEvent> evt) {
 		if(evt.value().getClass().equals(RicettaCreatedEvent.class)){
 			RicettaCreatedEvent event = (RicettaCreatedEvent) evt.value();

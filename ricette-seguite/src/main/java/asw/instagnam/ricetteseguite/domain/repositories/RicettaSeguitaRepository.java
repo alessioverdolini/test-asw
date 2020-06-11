@@ -1,6 +1,6 @@
-package asw.instagnam.ricetteseguite.domain.repository;
+package asw.instagnam.ricetteseguite.domain.repositories;
 
-import asw.instagnam.ricetteseguite.domain.RicettaSeguita;
+import asw.instagnam.ricetteseguite.domain.entities.RicettaSeguita;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Collection;

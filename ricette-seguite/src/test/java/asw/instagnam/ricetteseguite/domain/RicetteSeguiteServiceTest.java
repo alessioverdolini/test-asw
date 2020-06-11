@@ -1,8 +1,8 @@
 package asw.instagnam.ricetteseguite.domain;
 
-import asw.instagnam.ricetteseguite.domain.repository.ConnessioneRepository;
-import asw.instagnam.ricetteseguite.domain.repository.RicettaRepository;
-import asw.instagnam.ricetteseguite.domain.repository.RicettaSeguitaRepository;
+import asw.instagnam.ricetteseguite.domain.repositories.ConnessioneRepository;
+import asw.instagnam.ricetteseguite.domain.repositories.RicettaRepository;
+import asw.instagnam.ricetteseguite.domain.repositories.RicettaSeguitaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

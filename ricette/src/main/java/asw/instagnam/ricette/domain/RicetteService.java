@@ -1,7 +1,9 @@
 package asw.instagnam.ricette.domain;
 
-import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.common.api.event.RicettaCreatedEvent;
+import asw.instagnam.common.api.event.events.DomainEvent;
+import asw.instagnam.common.api.event.events.RicettaCreatedEvent;
+import asw.instagnam.ricette.domain.entities.RicettaCompleta;
+import asw.instagnam.ricette.domain.repositories.RicetteRepository;
 import asw.instagnam.ricette.producer.RicetteEventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

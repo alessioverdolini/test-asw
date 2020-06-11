@@ -1,12 +1,12 @@
-package asw.instagnam.common.api.event;
+package asw.instagnam.common.api.event.events;
 
-import lombok.AllArgsConstructor;
+import asw.instagnam.common.api.event.events.DomainEvent;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ConnessioneCreatedEvent implements DomainEvent{
+public class ConnessioneCreatedEvent implements DomainEvent {
 	
 	private Long id; 
 	private String follower; 

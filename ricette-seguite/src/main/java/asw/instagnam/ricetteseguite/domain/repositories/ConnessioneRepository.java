@@ -1,10 +1,8 @@
-package asw.instagnam.ricetteseguite.domain.repository;
+package asw.instagnam.ricetteseguite.domain.repositories;
 
-import asw.instagnam.ricetteseguite.domain.Connessione;
+import asw.instagnam.ricetteseguite.domain.entities.Connessione;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
-import java.util.Collection;
 import java.util.List;
 
 public interface ConnessioneRepository extends JpaRepository<Connessione, Long> {

@@ -1,5 +1,6 @@
-package asw.instagnam.connessioni.domain;
+package asw.instagnam.connessioni.domain.repositories;
 
+import asw.instagnam.connessioni.domain.entities.Connessione;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Collection;

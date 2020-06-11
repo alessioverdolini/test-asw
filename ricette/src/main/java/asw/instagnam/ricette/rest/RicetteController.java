@@ -1,7 +1,7 @@
 package asw.instagnam.ricette.rest;
 
-import asw.instagnam.ricette.domain.Ricetta;
-import asw.instagnam.ricette.domain.RicettaCompleta;
+import asw.instagnam.ricette.domain.entities.Ricetta;
+import asw.instagnam.ricette.domain.entities.RicettaCompleta;
 import asw.instagnam.ricette.domain.RicetteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package asw.instagnam.ricette.domain;
+package asw.instagnam.ricette.domain.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

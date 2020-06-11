@@ -1,8 +1,11 @@
 package asw.instagnam.ricetteseguite.domain;
 
-import asw.instagnam.ricetteseguite.domain.repository.ConnessioneRepository;
-import asw.instagnam.ricetteseguite.domain.repository.RicettaRepository;
-import asw.instagnam.ricetteseguite.domain.repository.RicettaSeguitaRepository;
+import asw.instagnam.ricetteseguite.domain.entities.Connessione;
+import asw.instagnam.ricetteseguite.domain.entities.Ricetta;
+import asw.instagnam.ricetteseguite.domain.entities.RicettaSeguita;
+import asw.instagnam.ricetteseguite.domain.repositories.ConnessioneRepository;
+import asw.instagnam.ricetteseguite.domain.repositories.RicettaRepository;
+import asw.instagnam.ricetteseguite.domain.repositories.RicettaSeguitaRepository;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,7 +74,6 @@ public class RicetteSeguiteService {
             logger.info("CONSTRAINT VIOLATION EXCEPTION: (" + followerId + ", " + idRicetta + ")");
         }
     }
-
 
     private Connessione connessioneFactory(String followedId, String followerId) {
         return new Connessione(followedId, followerId);

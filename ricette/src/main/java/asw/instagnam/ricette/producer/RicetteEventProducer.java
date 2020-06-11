@@ -1,7 +1,8 @@
 package asw.instagnam.ricette.producer;
 
-import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.common.api.event.DomainEventProducer;
+import asw.instagnam.common.api.event.events.DomainEvent;
+import asw.instagnam.common.api.event.producer.DomainEventProducer;
+import asw.instagnam.common.api.event.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ public class RicetteEventProducer implements DomainEventProducer {
 
 	@Override
 	public String getTopic() {
-		return "ricette-service-event-channel";
+		return Topic.ricette;
 	}
 
 }

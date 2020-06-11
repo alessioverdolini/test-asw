@@ -1,4 +1,4 @@
-package asw.instagnam.connessioni.domain;
+package asw.instagnam.connessioni.domain.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

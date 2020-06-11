@@ -1,6 +1,6 @@
 package asw.instagnam.connessioni.rest;
 
-import asw.instagnam.connessioni.domain.Connessione;
+import asw.instagnam.connessioni.domain.entities.Connessione;
 import asw.instagnam.connessioni.domain.ConnessioniService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
