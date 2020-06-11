@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data @NoArgsConstructor
 public class Connessione {
 
 	@Id
@@ -19,8 +19,8 @@ public class Connessione {
 	private String follower;
 	private String followed;
 
-	public Connessione(String follower, String followed) {
-		this.follower = follower;
+	public Connessione(String followed, String follower) {
 		this.followed = followed;
+		this.follower = follower;
 	}
 }

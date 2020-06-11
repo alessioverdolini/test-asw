@@ -40,12 +40,12 @@ public class RicetteSeguiteService {
         markRicetteAsFollowedBy(followerId, ricette);
     }
 
-    public void addRicetta(Long id, String autore, String titolo) {
-        logger.info("ADDING RICETTA: (" + id + ", " + autore + ", " + titolo + ")");
-        ricettaRepository.save(ricettaFactory(id, autore, titolo));
+    public void addRicetta(Long idRicetta, String autore, String titolo) {
+        logger.info("ADDING RICETTA: (" + idRicetta + ", " + autore + ", " + titolo + ")");
+        ricettaRepository.save(ricettaFactory(idRicetta, autore, titolo));
         List<Connessione> connessioni = connessioneRepository.findAllByFollowed(autore);
         List<String> utenti = connessioni.stream().map(Connessione::getFollower).collect(Collectors.toList());
-        markRicettaFollowedBy(id, autore, titolo, utenti);
+        markRicettaFollowedBy(idRicetta, autore, titolo, utenti);
     }
 
     private void markRicetteAsFollowedBy(String followerId, List<Ricetta> ricette) {
