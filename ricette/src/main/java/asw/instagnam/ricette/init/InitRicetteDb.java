@@ -17,7 +17,6 @@ public class InitRicetteDb implements CommandLineRunner {
 		ricetteService.createRicetta("Gennaro", "Tonno e fagioli", "Unisci i fagioli con il tonno");
 		ricetteService.createRicetta("Antonino", "Pizza margherita", "... e alla fine inforna");
 		ricetteService.createRicetta("Benedetta", "Tonno e fagioli", "Unisci il tonno con i fagioli");
-
 	}
 
 }

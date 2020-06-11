@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -20,7 +18,7 @@ public class RicettaSeguita {
 	private Long idRicetta; 
 	private String autoreRicetta; 
 	private String titoloRicetta;
-	
+
 	public RicettaSeguita(String follower, Long idRicetta, String autoreRicetta, String titoloRicetta) {
 		super();
 		this.follower = follower;
@@ -28,7 +26,8 @@ public class RicettaSeguita {
 		this.autoreRicetta = autoreRicetta;
 		this.titoloRicetta = titoloRicetta;
 	}
-	
-	
-	 
+
+	public Ricetta getRicetta(){
+		return new Ricetta(idRicetta, autoreRicetta, titoloRicetta);
+	}
 }

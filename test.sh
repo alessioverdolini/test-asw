@@ -1,10 +1,10 @@
 
 echo Tests projects...
 echo ""
-curl http://localhost:8090/connessioni/connessioni
+curl http://localhost:8080/connessioni/connessioni
 echo ""
 echo ""
-curl http://localhost:8090/ricette/ricette
+curl http://localhost:8080/ricette/ricette
 echo ""
 echo ""
-curl http://localhost:8090/ricette-seguite/ricetteseguite/Gennaro
+curl http://localhost:8080/ricette-seguite/ricetteseguite/Gennaro

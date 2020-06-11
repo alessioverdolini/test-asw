@@ -18,7 +18,6 @@ public class InitConnessioniDb implements CommandLineRunner {
 		connessioniService.createConnessione("Paolo", "Gennaro");
 		connessioniService.createConnessione("Anna", "Antonino");
 		connessioniService.createConnessione("Anna", "Benedetta");
-
 	}
 
 }
