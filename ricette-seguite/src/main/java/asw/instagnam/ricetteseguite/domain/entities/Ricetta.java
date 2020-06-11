@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/* Ricetta, in formato breve. */ 
+/* Ricetta (in formato breve). */ 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Ricetta {
