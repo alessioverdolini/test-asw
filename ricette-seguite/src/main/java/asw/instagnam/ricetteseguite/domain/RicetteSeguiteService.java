@@ -1,12 +1,10 @@
 package asw.instagnam.ricetteseguite.domain;
 
+import asw.instagnam.ricetteseguite.domain.repository.RicetteSeguiteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import asw.instagnam.ricetteseguite.domain.repository.RicetteSeguiteRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.*;
+import java.util.Collection;
 import java.util.stream.Collectors; 
 
 @Service 

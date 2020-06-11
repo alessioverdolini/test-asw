@@ -1,20 +1,14 @@
 package asw.instagnam.connessioni.rest;
 
-import asw.instagnam.connessioni.domain.*;
-
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable; 
-import org.springframework.web.bind.annotation.RequestParam; 
-import org.springframework.web.bind.annotation.RequestBody; 
-import org.springframework.web.server.ResponseStatusException;
-import org.springframework.http.HttpStatus;
-
+import asw.instagnam.connessioni.domain.Connessione;
+import asw.instagnam.connessioni.domain.ConnessioniService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.logging.Logger; 
-import java.util.*; 
+import java.util.Collection;
+import java.util.logging.Logger;
 
 @RestController
 public class ConnessioniController {

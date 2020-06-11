@@ -1,14 +1,14 @@
 package asw.instagnam.ricetteseguite.rest;
 
-import asw.instagnam.ricetteseguite.domain.*; 
-
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable; 
+import asw.instagnam.ricetteseguite.domain.Ricetta;
+import asw.instagnam.ricetteseguite.domain.RicetteSeguiteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.logging.Logger; 
-import java.util.*; 
+import java.util.Collection;
+import java.util.logging.Logger;
 
 @RestController
 public class RicetteSeguiteController {

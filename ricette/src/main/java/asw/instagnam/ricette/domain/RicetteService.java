@@ -1,12 +1,12 @@
 package asw.instagnam.ricette.domain;
 
-import asw.instagnam.ricette.producer.RicetteEventProducer;
-import org.springframework.stereotype.Service;
 import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.ricetteservice.api.event.RicettaCreatedEvent;
-
+import asw.instagnam.common.api.event.RicettaCreatedEvent;
+import asw.instagnam.ricette.producer.RicetteEventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.*; 
+import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class RicetteService {

@@ -1,4 +1,4 @@
-package asw.instagnam.connessioni.rest;
+package asw.instagnam.common.api.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateConnessioneRequest {
-
+public class ConnessioneCreatedEvent implements DomainEvent{
+	
+	private Long id; 
 	private String follower; 
 	private String followed; 
-
+	
 }
-

@@ -1,11 +1,9 @@
 package asw.instagnam.ricette.init;
 
-import asw.instagnam.ricette.domain.*; 
-
-import org.springframework.stereotype.Component;
-import org.springframework.boot.CommandLineRunner;
-
+import asw.instagnam.ricette.domain.RicetteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 @Component
 public class InitRicetteDb implements CommandLineRunner {

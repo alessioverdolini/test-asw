@@ -1,10 +1,9 @@
 package asw.instagnam.ricetteseguite.domain.repository;
 
+import asw.instagnam.ricetteseguite.domain.Connessione;
 import org.springframework.data.repository.CrudRepository;
 
-import asw.instagnam.ricetteseguite.domain.Connessione;
-
-import java.util.*; 
+import java.util.Collection;
 
 public interface ConnessioniRepository extends CrudRepository<Connessione, Long> {
 

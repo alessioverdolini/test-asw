@@ -1,16 +1,16 @@
 package asw.instagnam.ricetteseguite.connessioni;
 
-import asw.instagnam.ricetteseguite.domain.*; 
-
-import org.springframework.stereotype.Service;
+import asw.instagnam.ricetteseguite.domain.Connessione;
+import asw.instagnam.ricetteseguite.domain.ConnessioniService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
-
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientException;
 import reactor.core.publisher.Flux;
-import java.util.*; 
+
+import java.util.Collection;
 
 @Service 
 @Primary 

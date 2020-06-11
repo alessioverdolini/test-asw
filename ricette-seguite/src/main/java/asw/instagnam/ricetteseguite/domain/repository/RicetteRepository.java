@@ -1,10 +1,9 @@
 package asw.instagnam.ricetteseguite.domain.repository;
 
+import asw.instagnam.ricetteseguite.domain.Ricetta;
 import org.springframework.data.repository.CrudRepository;
 
-import asw.instagnam.ricetteseguite.domain.Ricetta;
-
-import java.util.*; 
+import java.util.Collection;
 
 public interface RicetteRepository extends CrudRepository<Ricetta, Long> {
 

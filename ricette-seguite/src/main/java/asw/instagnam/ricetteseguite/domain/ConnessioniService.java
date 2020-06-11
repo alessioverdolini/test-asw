@@ -1,6 +1,6 @@
 package asw.instagnam.ricetteseguite.domain;
 
-import java.util.*; 
+import java.util.Collection;
 
 public interface ConnessioniService {
 

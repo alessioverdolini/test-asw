@@ -1,11 +1,9 @@
 package asw.instagnam.ricetteseguite.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Bean;
-
-import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.DefaultUriBuilderFactory; 
 
 /* Configurazione per un Web Client load balanced. */

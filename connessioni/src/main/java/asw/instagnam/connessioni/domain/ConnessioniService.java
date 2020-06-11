@@ -1,13 +1,12 @@
 package asw.instagnam.connessioni.domain;
 
-import asw.instagnam.common.api.event.DomainEventProducer;
-import org.springframework.stereotype.Service;
+import asw.instagnam.common.api.event.ConnessioneCreatedEvent;
 import asw.instagnam.common.api.event.DomainEvent;
-import asw.instagnam.connessioniservice.api.event.ConnessioneCreatedEvent;
-
-
+import asw.instagnam.common.api.event.DomainEventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.*; 
+import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class ConnessioniService {

@@ -1,11 +1,9 @@
 package asw.instagnam.connessioni.init;
 
-import asw.instagnam.connessioni.domain.*; 
-
-import org.springframework.stereotype.Component;
-import org.springframework.boot.CommandLineRunner;
-
+import asw.instagnam.connessioni.domain.ConnessioniService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 @Component
 public class InitConnessioniDb implements CommandLineRunner {

@@ -1,20 +1,19 @@
 package asw.instagnam.ricetteseguite.domain.consumer;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import asw.instagnam.common.api.event.DomainEvent;
+import asw.instagnam.common.api.event.RicettaCreatedEvent;
 import asw.instagnam.ricetteseguite.domain.Connessione;
 import asw.instagnam.ricetteseguite.domain.Ricetta;
 import asw.instagnam.ricetteseguite.domain.RicettaSeguita;
 import asw.instagnam.ricetteseguite.domain.repository.ConnessioniRepository;
 import asw.instagnam.ricetteseguite.domain.repository.RicetteRepository;
 import asw.instagnam.ricetteseguite.domain.repository.RicetteSeguiteRepository;
-import asw.instagnam.ricetteservice.api.event.RicettaCreatedEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 
 @Service
