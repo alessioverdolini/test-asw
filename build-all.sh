@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo Building all projects...
+echo Building Application...
 
 gradle clean build
 

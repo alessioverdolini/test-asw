@@ -1,7 +1,7 @@
 #!/bin/bash
 
+echo Halting Application...
 
-echo Halting infrastructure
 docker-compose down -v
 
 

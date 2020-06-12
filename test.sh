@@ -1,3 +1,4 @@
+#!/bin/bash
 
 echo Tests projects...
 echo ""
