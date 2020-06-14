@@ -15,14 +15,18 @@ import asw.instagnam.ricetteseguite.domain.compkeys.RicettaSeguitaId;
 public class RicettaSeguita {
 
 	@Id
-	private String follower; 
+	private String follower;
+	
+	private Long idRicetta; 
+
 	@Id
 	private String autoreRicetta; 
 	@Id
 	private String titoloRicetta;
 
+	
 	public Ricetta getRicetta(){
-		return new Ricetta(autoreRicetta, titoloRicetta);
+		return new Ricetta(idRicetta,autoreRicetta, titoloRicetta);
 	}
 
 }

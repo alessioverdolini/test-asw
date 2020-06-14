@@ -17,9 +17,12 @@ import asw.instagnam.ricetteseguite.domain.compkeys.RicettaId;
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Ricetta {
 
+	private Long id; 
+
 	@Id
 	private String autore;
 	@Id
 	private String titolo; 
+	 
 
 }

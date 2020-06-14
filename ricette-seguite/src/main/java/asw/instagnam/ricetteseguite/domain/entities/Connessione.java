@@ -19,8 +19,9 @@ public class Connessione {
 	@Id
 	private String followed;
 
-	public Connessione(String followed, String follower) {
-		this.followed = followed;
-		this.follower = follower;
+	public Connessione(String follower, String followed) {
+		this(); 
+		this.follower = follower; 
+		this.followed = followed; 
 	}
 }

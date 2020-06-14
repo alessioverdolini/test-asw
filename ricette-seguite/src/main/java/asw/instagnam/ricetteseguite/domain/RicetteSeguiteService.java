@@ -43,30 +43,31 @@ public class RicetteSeguiteService {
         markRicetteAsFollowedBy(followerId, ricette);
     }
 
-    public void addRicetta(String autore, String titolo) {
-        logger.info("ADDING RICETTA: (" + autore + ", " + titolo + ")");
-        ricettaRepository.save(ricettaFactory(autore, titolo));
+    public void addRicetta(Long idRicetta, String autore, String titolo) {
+        logger.info("ADDING RICETTA: (" + idRicetta + ", " + autore + ", " + titolo + ")");
+        ricettaRepository.save(ricettaFactory(idRicetta, autore, titolo));
         List<Connessione> connessioni = connessioneRepository.findAllByFollowed(autore);
         List<String> utenti = connessioni.stream().map(Connessione::getFollower).collect(Collectors.toList());
-        markRicettaFollowedBy(autore, titolo, utenti);
+        markRicettaFollowedBy(idRicetta, autore, titolo, utenti);
     }
 
     private void markRicetteAsFollowedBy(String followerId, List<Ricetta> ricette) {
         ricette.forEach(ricetta -> {
-            saveRicettaSeguitaIfNotExists(followerId, ricetta.getAutore(), ricetta.getTitolo());
+            saveRicettaSeguitaIfNotExists(followerId, ricetta.getId(), ricetta.getAutore(), ricetta.getTitolo());
         });
     }
 
-    private void markRicettaFollowedBy(String autore, String titolo, List<String> utenti) {
+    private void markRicettaFollowedBy(Long idRicetta, String autore, String titolo, List<String> utenti) {
         utenti.forEach(utente -> {
-            saveRicettaSeguitaIfNotExists(utente, autore, titolo);
+            saveRicettaSeguitaIfNotExists(utente, idRicetta, autore, titolo);
         });
     }
 
-    private void saveRicettaSeguitaIfNotExists(String followerId, String autore, String titolo) {
+    private void saveRicettaSeguitaIfNotExists(String followerId, Long idRicetta, String autore, String titolo) {
         try {
             ricettaSeguitaRepository.save(ricetteSeguiteFactory(
                     followerId,
+                    idRicetta,
                     autore,
                     titolo));
         } catch (DataIntegrityViolationException e) {
@@ -78,11 +79,11 @@ public class RicetteSeguiteService {
         return new Connessione(followedId, followerId);
     }
 
-    private Ricetta ricettaFactory(String autore, String titolo) {
-        return new Ricetta(autore, titolo);
+    private Ricetta ricettaFactory(Long id, String autore, String titolo) {
+        return new Ricetta(id, autore, titolo);
     }
 
-    private RicettaSeguita ricetteSeguiteFactory(String followerId, String autoreId, String titolo) {
-        return new RicettaSeguita(followerId, autoreId, titolo);
+    private RicettaSeguita ricetteSeguiteFactory(String followerId, Long ricettaId, String autoreId, String titolo) {
+        return new RicettaSeguita(followerId, ricettaId, autoreId, titolo);
     }
 }

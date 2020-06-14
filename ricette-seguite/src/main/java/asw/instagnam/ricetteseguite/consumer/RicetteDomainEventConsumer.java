@@ -23,7 +23,7 @@ public class RicetteDomainEventConsumer implements DomainEventConsumer {
 	public void onEvent(ConsumerRecord<String, DomainEvent> evt) {
 		if(evt.value().getClass().equals(RicettaCreatedEvent.class)){
 			RicettaCreatedEvent event = (RicettaCreatedEvent) evt.value();
-			service.addRicetta(event.getAutore(), event.getTitolo());
+			service.addRicetta(event.getId(), event.getAutore(), event.getTitolo());
 		}
 	}
 

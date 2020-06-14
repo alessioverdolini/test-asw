@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.UUID;
 
 @Service
 public class RicetteService {
@@ -23,9 +24,9 @@ public class RicetteService {
 	}
 
 	public RicettaCompleta createRicetta(String autore, String titolo, String preparazione) {
-		RicettaCompleta ricetta = new RicettaCompleta(autore, titolo, preparazione); 
+		RicettaCompleta ricetta = new RicettaCompleta(getLongIdFromUUID(), autore, titolo, preparazione); 
 		ricetta = ricetteRepository.save(ricetta);
-		DomainEvent event = new RicettaCreatedEvent(ricetta.getAutore(), ricetta.getTitolo());
+		DomainEvent event = new RicettaCreatedEvent(ricetta.getId(), ricetta.getAutore(), ricetta.getTitolo());
 		domainEventProducer.produce(event);
 		return ricetta;
 	}
@@ -40,6 +41,11 @@ public class RicetteService {
 
 	public Collection<RicettaCompleta> getRicetteByAutore(String autore) {
 		return ricetteRepository.findAllByAutore(autore);
+	}
+	
+	
+	private Long getLongIdFromUUID() {
+		return UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
 	}
 
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.UUID;
 
 @Service
 public class ConnessioniService {
@@ -24,9 +25,9 @@ public class ConnessioniService {
 
 
 	public Connessione createConnessione(String follower, String followed) {
-		Connessione connessione = new Connessione(follower, followed); 
+		Connessione connessione = new Connessione(getLongIdFromUUID(), follower, followed); 
 		connessione = connessioniRepository.save(connessione);
-		DomainEvent event = new ConnessioneCreatedEvent(connessione.getFollower(), connessione.getFollowed());
+		DomainEvent event = new ConnessioneCreatedEvent(connessione.getId(), connessione.getFollower(), connessione.getFollowed());
 		domainEventProducer.produce(event);
 		return connessione;
 	}
@@ -45,5 +46,11 @@ public class ConnessioniService {
 		Collection<Connessione> connessioni = connessioniRepository.findAllByFollower(follower);
 		return connessioni;
 	}
+
+	
+	private Long getLongIdFromUUID() {
+		return UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+	}
+
 
 }

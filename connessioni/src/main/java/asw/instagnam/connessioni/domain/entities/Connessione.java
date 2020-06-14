@@ -4,10 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
-
 
 
 @Entity 
@@ -15,13 +13,15 @@ import javax.persistence.IdClass;
 @Data @NoArgsConstructor
 public class Connessione {
 
+	private Long id;
 	@Id 
 	private String follower;
 	@Id
 	private String followed; 
 	
-	public Connessione(String follower, String followed) {
+	public Connessione(Long id, String follower, String followed) {
 		this(); 
+		this.id = id;
 		this.follower = follower; 
 		this.followed = followed; 
 	}
