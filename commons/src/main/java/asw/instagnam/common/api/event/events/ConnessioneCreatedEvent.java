@@ -8,12 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ConnessioneCreatedEvent implements DomainEvent {
 	
-	private Long id; 
 	private String follower; 
 	private String followed;
 
-	public ConnessioneCreatedEvent(Long id, String follower, String followed) {
-		this.id = id;
+	public ConnessioneCreatedEvent(String follower, String followed) {
 		this.follower = follower;
 		this.followed = followed;
 	}

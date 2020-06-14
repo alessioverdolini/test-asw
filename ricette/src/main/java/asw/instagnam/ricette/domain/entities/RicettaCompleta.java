@@ -4,18 +4,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 /* Ricetta, in formato completo. */ 
-@Entity 
+@Entity
+@IdClass(RicettaId.class)
 @Data @NoArgsConstructor
 public class RicettaCompleta {
 
 	@Id 
-	@GeneratedValue
-	private Long id; 
-	private String autore; 
+	private String autore;
+	@Id
 	private String titolo; 
 	private String preparazione; 
 	

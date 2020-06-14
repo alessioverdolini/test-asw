@@ -8,12 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RicettaCreatedEvent implements DomainEvent {
 	
-	private Long id; 
 	private String autore; 
 	private String titolo;
 
-	public RicettaCreatedEvent(Long id, String autore, String titolo) {
-		this.id = id;
+	public RicettaCreatedEvent(String autore, String titolo) {
 		this.autore = autore;
 		this.titolo = titolo;
 	}

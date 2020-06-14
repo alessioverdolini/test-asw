@@ -85,7 +85,7 @@ services:
       - kafka
 
   #SERVIZIO CONNESSIONI
-  connessioni:
+  connessioni-service:
     build: ./connessioni
     depends_on:
       - consul
@@ -93,7 +93,7 @@ services:
       - kafka
 
   #SERVIZIO RICETTE SEGUITE
-  ricette-seguite:
+  ricette-seguite-service:
     build: ./ricette-seguite
     depends_on:
       - consul

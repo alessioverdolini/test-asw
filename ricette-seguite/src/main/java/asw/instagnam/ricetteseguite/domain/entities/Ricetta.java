@@ -6,15 +6,20 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
-/* Ricetta (in formato breve). */ 
+import asw.instagnam.ricetteseguite.domain.compkeys.RicettaId;
+
+
+/* Ricetta, in formato breve. */ 
 @Entity
+@IdClass(RicettaId.class)
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Ricetta {
 
 	@Id
-	private Long id; 
-	private String autore; 
+	private String autore;
+	@Id
 	private String titolo; 
 
 }
